@@ -8,7 +8,7 @@ part 'popular_provider.g.dart';
 @riverpod
 Future<List<Movie>> getPopularMovies(GetPopularMoviesRef ref) async {
   final hasInternetConnection = await ref
-      .watch(internetConnectionAdapterProvider)
+      .watch(internetCheckerProvider)
       .hasInternetConnection();
 
   if (!hasInternetConnection) throw NoInternetConnectionException();

@@ -9,7 +9,7 @@ part 'search_provider.g.dart';
 Future<List<Movie>> searchMovies(SearchMoviesRef ref,
     {required String query}) async {
       final hasInternetConnection = await ref
-      .watch(internetConnectionAdapterProvider)
+      .watch(internetCheckerProvider)
       .hasInternetConnection();
 
   if (!hasInternetConnection) throw NoInternetConnectionException();

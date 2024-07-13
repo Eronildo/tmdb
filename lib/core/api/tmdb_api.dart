@@ -1,29 +1,29 @@
-import 'package:dio/dio.dart';
+import 'package:tmdb/core/adapters/http/http_client.dart';
 import 'package:tmdb/core/models/movie_credits.dart';
 import 'package:tmdb/core/models/movies_response.dart';
 
 class TmdbApi {
-  TmdbApi({required this.dio});
+  TmdbApi({required this.httpClient});
 
-  final Dio dio;
+  final HttpClient httpClient;
 
   Future<MoviesResponse> searchMovie({required String query}) async {
-    final response = await dio.get('/search/movie');
+    final response = await httpClient.get('/search/movie');
     return MoviesResponse.fromJson(response.data);
   }
 
   Future<MoviesResponse> getTrendingMovies() async {
-    final response = await dio.get('/trending/movie/day');
+    final response = await httpClient.get('/trending/movie/day');
     return MoviesResponse.fromJson(response.data);
   }
 
   Future<MoviesResponse> getPopularMovies() async {
-    final response = await dio.get('/movie/popular');
+    final response = await httpClient.get('/movie/popular');
     return MoviesResponse.fromJson(response.data);
   }
 
   Future<MovieCredits> getMovieCredits({required int movieId}) async {
-    final response = await dio.get('/movie/$movieId/credits');
+    final response = await httpClient.get('/movie/$movieId/credits');
     return MovieCredits.fromJson(response.data);
   }
 }

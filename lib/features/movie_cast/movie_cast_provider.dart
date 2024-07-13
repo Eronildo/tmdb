@@ -9,7 +9,7 @@ part 'movie_cast_provider.g.dart';
 Future<List<MovieCast>> getMovieCasts(GetMovieCastsRef ref,
     {required int movieId}) async {
   final hasInternetConnection = await ref
-      .watch(internetConnectionAdapterProvider)
+      .watch(internetCheckerProvider)
       .hasInternetConnection();
 
   if (!hasInternetConnection) throw NoInternetConnectionException();
