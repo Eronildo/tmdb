@@ -6,6 +6,12 @@
 
 ### The Movie Database Flutter project.
 
+|Home Page|Movie 1|Movie 2|
+|:-:|:-:|:-:|
+|![Screenshot_1720885130](https://github.com/user-attachments/assets/9a74a3af-d90f-42e9-96cb-b1b96841f4f1)|![Screenshot_1720885102](https://github.com/user-attachments/assets/dd476836-62c2-483e-9927-611611a97608)|![Screenshot_1720885116](https://github.com/user-attachments/assets/2eddf49a-e8d4-4ec5-b47c-85ad74281f0d)|
+
+
+
 ## Challenge
 
 Themoviedb layout should be used as a reference to create a movie listing page, where users can interact and access individual movie pages through cards. Movies must be populated in the system using themoviedb API and displayed according to the provided layout.
