@@ -1,7 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:tmdb/core/adapters/internet_connection_adapter.dart';
+import 'package:tmdb/core/adapters/internet_connection/internet_checker.dart';
+import 'package:tmdb/core/adapters/internet_connection/internet_connection_adapter.dart';
 import 'package:tmdb/core/api/tmdb_api.dart';
 import 'package:tmdb/core/constants/constants.dart';
 import 'package:tmdb/core/models/movie.dart';
@@ -22,8 +23,7 @@ Dio dio(DioRef _) => Dio(
 TmdbApi tmdbApi(TmdbApiRef ref) => TmdbApi(dio: ref.watch(dioProvider));
 
 @Riverpod(keepAlive: true)
-InternetConnectionAdapter internetConnectionAdapter(
-    InternetConnectionAdapterRef _) {
+InternetChecker internetChecker(InternetCheckerRef _) {
   return InternetConnectionAdapter();
 }
 
