@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:tmdb/core/constants/constants.dart';
+import 'package:tmdb/core/widgets/no_internet_connection_widget.dart';
 import 'package:tmdb/features/movie_cast/movie_cast_provider.dart';
 
 class MovieCastList extends HookConsumerWidget {
@@ -95,8 +96,8 @@ class MovieCastList extends HookConsumerWidget {
                 ),
               ),
             ),
-      error: (error, stackTrace) => const Text('Error'),
-      loading: () => const CircularProgressIndicator(),
+      error: (error, stackTrace) => const NoInternetConnectionWidget(),
+      loading: () => const Center(child: CircularProgressIndicator()),
     );
   }
 }

@@ -6,6 +6,7 @@ import 'package:routefly/routefly.dart';
 import 'package:tmdb/core/constants/constants.dart';
 import 'package:tmdb/core/extensions/extensions.dart';
 import 'package:tmdb/core/providers/tmdb_provider.dart';
+import 'package:tmdb/core/widgets/no_internet_connection_widget.dart';
 import 'package:tmdb/features/search/search_provider.dart';
 
 final _cardBorderRadius = BorderRadius.circular(6);
@@ -111,8 +112,8 @@ class SearchMovieList extends HookConsumerWidget {
           );
         },
       ),
-      error: (error, stackTrace) => const Text('Error'),
-      loading: () => const CircularProgressIndicator(),
+      error: (error, stackTrace) => const NoInternetConnectionWidget(),
+      loading: () => const Center(child: CircularProgressIndicator()),
     );
   }
 }

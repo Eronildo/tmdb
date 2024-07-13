@@ -5,6 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:tmdb/app/home/widgets/movie_card.dart';
 import 'package:tmdb/core/constants/constants.dart';
 import 'package:tmdb/core/models/movie.dart';
+import 'package:tmdb/core/widgets/no_internet_connection_widget.dart';
 
 class MovieListContainer extends StatelessWidget {
   const MovieListContainer({
@@ -65,8 +66,8 @@ class MovieListContainer extends StatelessWidget {
               ),
             ],
           ),
-          error: (error, stackTrace) => const Text('Error'),
-          loading: () => const CircularProgressIndicator(),
+          error: (error, stackTrace) => const NoInternetConnectionWidget(),
+          loading: () => const Center(child: CircularProgressIndicator()),
         ),
       ],
     );
